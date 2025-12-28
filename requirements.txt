@@ -1,0 +1,6 @@
+django
+djangorestframework
+drf-yasg
+django-filter==24.3
+celery
+unidecode

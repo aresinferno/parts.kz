@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+{% block css %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<!-- 1. Выбор марки -->
+{% if brands %}
+<h2>Выберите марку</h2>
+<ul>
+    {% for brand in brands %}
+    <li>
+        <a href="?brand={{ brand.slug }}">
+            {{ brand.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<!-- 2. Выбор модели -->
+{% if models %}
+<h2>Выберите модель</h2>
+<ul>
+    {% for model in models %}
+    <li>
+        <a href="?brand={{ request.GET.brand }}&model={{ model.slug }}">
+            {{ model.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<!-- 3. Выбор года -->
+{% if years %}
+<h2>Выберите год</h2>
+<ul>
+    {% for year in years %}
+    <li>
+        <a href="?brand={{ request.GET.brand }}&model={{ request.GET.model }}&year={{ year }}">
+            {{ year }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<!-- 4. Запчасти -->
+{% if parts %}
+<h2>Запчасти</h2>
+<ul>
+    {% for part in parts %}
+    <li>
+        <strong>{{ part.part_type.name }}</strong> — {{ part.price }} $
+    </li>
+    {% empty %}
+    <li>Запчастей не найдено</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% endblock %}
