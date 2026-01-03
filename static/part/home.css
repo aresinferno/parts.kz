@@ -1,0 +1,156 @@
+.section {
+    margin-bottom: 30px;
+}
+/* Контейнер под картинку */
+.image-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Логотипы брендов */
+.brand-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Картинки запчастей */
+.part-img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #f3f3f3;
+    padding: 10px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #ddd;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card:hover {
+    background: #cfcfcf;
+}
+
+.card a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.price {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+
+/* === Карточка запчасти === */
+.part-card{
+  background:#fdfdfd;
+  border:1px solid #e0e0e0;
+  border-radius:12px;
+  padding:14px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  transition:transform .18s ease;
+  height:100%;
+}
+
+.part-card:hover{
+  transform:translateY(-4px);
+}
+
+/* === Картинка === */
+.part-img,
+.part-placeholder{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:12px;
+  flex-shrink:0;
+}
+
+.part-placeholder{
+  background:#eee;
+  color:#888;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-style:italic;
+}
+
+/* === Информация === */
+.part-info{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.part-title{
+  font-size:1.05rem;
+  margin:0 0 8px;
+  color:#222;
+  line-height:1.2;
+}
+
+/* список характеристик */
+.part-meta{
+  list-style:none;
+  padding:0;
+  margin:0 0 10px;
+  font-size:0.9rem;
+  color:#444;
+}
+
+.part-meta li{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:4px;
+}
+
+.part-meta span{
+  color:#777;
+}
+
+/* наличие */
+.availab{
+  color:#1b8f3c;
+  font-weight:600;
+}
+
+.not-availab{
+  color:#c0392b;
+  font-weight:600;
+}
+
+/* цена */
+.price{
+  margin-top:auto;
+  font-size:1.1rem;
+  font-weight:bold;
+  color:#000;
+}

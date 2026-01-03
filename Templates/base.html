@@ -1,22 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Auto Parts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'part/header.css' %}">
 
-    {% block title %}
-    {% endblock %}
+
     {% block css %}
     {% endblock %}
-
 </head>
 <body>
+<header>
+    <div class="logo">Something logo</div>
 
+    <div class="search">
+        <input type="text" name="q" placeholder="something part..." value="{{ request.GET.q|default:'' }}">
+    </div>
 
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/about/">О нас</a>
+    </nav>
+</header>
 
-
+<main class="container">
     {% block content %}
+    <!-- default content можно оставить пустым -->
     {% endblock %}
+</main>
 
 </body>
 </html>
