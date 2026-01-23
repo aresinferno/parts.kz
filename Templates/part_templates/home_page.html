@@ -16,12 +16,12 @@
         <h2>Выберите марку</h2>
         <div class="grid">
             {% for brand in brands %}
-            <div class="card">
-                <a href="?brand={{ brand.slug }}">
-                    <div class="image-box">
-                        <img src="{{ brand.picture.url }}" alt="logo" class="brand-img">
-                    </div>
-                </a>
+            <div class="card brand-card">
+                    <a href="?brand={{ brand.slug }}" class="brand-link">
+                        <div class="image-box">
+                            <img src="{{ brand.picture.url }}" alt="logo" class="brand-img">
+                        </div>
+                    </a>
             </div>
             {% endfor %}
         </div>

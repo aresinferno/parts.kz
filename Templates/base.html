@@ -13,21 +13,28 @@
 </head>
 <body>
 <header>
-    <div class="logo">Something logo</div>
+    <div class="logo">Parts.kz</div>
 
-    <div class="search">
-        <input type="text" name="q" placeholder="something part..." value="{{ request.GET.q|default:'' }}">
-    </div>
+<div class="search">
+    <form method="get" action="{% url 'search_parts' %}" class="search-form">
+        <input
+            type="text"
+            name="q"
+            placeholder="Поиск запчастей..."
+            value="{{ request.GET.q }}"
+        >
 
-    <nav>
-        <a href="/">Главная</a>
-        <a href="/about/">О нас</a>
-    </nav>
+        <button type="submit" class="search-btn" aria-label="Поиск">
+            <svg class="search-icon" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+            </svg>
+        </button>
+    </form>
+</div>
 </header>
-
 <main class="container">
     {% block content %}
-    <!-- default content можно оставить пустым -->
     {% endblock %}
 </main>
 
