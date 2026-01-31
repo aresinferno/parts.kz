@@ -98,11 +98,11 @@
                         <li><span>Модель:</span> {{ part.car_series.name }}</li>
                         <li><span>Год:</span> {{ part.year }}</li>
                         <li><span>Страна:</span> {{ part.made_in }}</li>
-                        <li><span>Состояние:</span> {{ part.condition }}</li>
+                        <li><span>Состояние:</span> {{ part.get_condition_display }}</li>
                         <li>
                             <span>Наличие:</span>
                             {% if part.availability %}
-                                <span class="availab">В наличии</span>
+                                <span class="availab">В наличии {{ part.quantity }} шт</span>
                             {% else %}
                                 <span class="not-availab">Нет</span>
                             {% endif %}

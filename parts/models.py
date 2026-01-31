@@ -60,7 +60,7 @@ class Part(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     car_series = models.ForeignKey(PartSeries, on_delete=models.CASCADE, null=True, related_name='parts_by_series')
     availability = models.BooleanField(default=True)
-    image = models.ImageField(null=True)
+    image = models.ImageField(blank=True ,null=True)
     condition = models.CharField(
         max_length=10,
         choices=[
@@ -68,6 +68,10 @@ class Part(models.Model):
             ('new', 'Новая'),
         ],
         default='new')
+    quantity = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Количество на складе"
+    )
     made_in = models.ForeignKey(PartPlace, on_delete=models.CASCADE, related_name='part_place', null=True)
     slug = models.SlugField(blank=True, null=True)
 
